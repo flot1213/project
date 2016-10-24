@@ -10,6 +10,7 @@ c언어 가위바위보 게임
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 int main(void){
 	int win = 0;
 	int draw = 0;
@@ -19,11 +20,14 @@ int main(void){
  num = rand()%3 + 1;
 
  for(int i=0;i<10;i++){
- printf("%d번째 (1.가위  2.바위  3.보)  : ",i+1);
+ printf("(1.가위  2.바위  3.보) %d번째 경기 : ",i+1);
  scanf("%d",&user_num);
 
 
-if(user_num>=4 || user_num<=0){ printf("다시입력");i--;}
+if(user_num>=4 || user_num<=0){
+	printf("다시입력하세요");
+	i--;
+}
 
 			while(user_num<=3){
 				if(num==1) printf("컴퓨터는 가위\n");
@@ -50,5 +54,5 @@ if(user_num>=4 || user_num<=0){ printf("다시입력");i--;}
 				break;
 			}
 		}
-		printf("%d승 %d무 %d패 했습니다.", win, draw, lose);
+		printf("컴퓨터와의 경기에서 %d승 %d무 %d패 했습니다.", win, draw, lose);
 }
